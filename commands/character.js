@@ -1,5 +1,3 @@
-const axios = require('axios');
-const { channelInfo } = require('../config/messageConfig');
 
 async function characterCommand(sock, chatId, message) {
     let userToAnalyze;
@@ -70,12 +68,7 @@ async function characterCommand(sock, chatId, message) {
             ...channelInfo
         });
 
-    } catch (error) {
-        console.error('Error in character command:', error);
-        await sock.sendMessage(chatId, { 
-            text: 'Failed to analyze character! Try again later.',
-            ...channelInfo 
-        });
+    
     }
 }
 
