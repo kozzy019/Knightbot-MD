@@ -11,3 +11,13 @@ async function aliveCommand(sock, chatId) {
                        `• And more!\n\n` +
                        `Type *.menu* for full command list`;
 
+         }
+            }
+        });
+    } catch (error) {
+        console.error('Error in alive command:', error);
+        await sock.sendMessage(chatId, { text: 'Bot is alive and running!' });
+    }
+}
+
+module.exports = aliveCommand;
